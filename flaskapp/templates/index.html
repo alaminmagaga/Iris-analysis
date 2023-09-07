@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <form method="POST" action="/result">
+        <label for="num1">Number 1:</label>
+        <input type="number" name="num1" required><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="number" name="num2" required><br>
+
+        <label for="operation">Select Operation:</label>
+        <select name="operation" required>
+            <option value="addition">Addition</option>
+            <option value="division">Division</option>
+        </select><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
